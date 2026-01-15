@@ -24,7 +24,7 @@ const users = [
       database: "donasi_makanan",
     });
 
-    console.log("🔐 Resetting Passwords...... \n");
+    console.log("🔐 Resetting Passwords\n");
 
     for (const user of users) {
       // Hash password
