@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Google Maps API Key - Ganti dengan API Key Anda sendiri -->
+    <!-- Cara mendapatkan API Key: https://developers.google.com/maps/documentation/android-sdk/get-api-key -->
+    <!-- Placeholder removed; actual API key is in google_maps_api.xml -->
+</resources>

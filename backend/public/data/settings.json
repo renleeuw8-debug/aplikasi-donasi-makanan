@@ -1,0 +1,9 @@
+{
+    "app_name": "Aplikasi Donasi Makanan",
+    "app_url": "http:\/\/localhost:3000",
+    "max_upload": "10",
+    "verify_timeout": "24",
+    "timezone": "Asia\/Jakarta",
+    "maintenance_mode": false,
+    "maintenance_msg": "sedang dalam pemeliharaan. Mohon coba kembali nanti"
+}

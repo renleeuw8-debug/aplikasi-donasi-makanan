@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "380798146189",
+    "project_id": "wide-song-474900-k6",
+    "storage_bucket": "wide-song-474900-k6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380798146189:android:efe6886416811abaa734c4",
+        "android_client_info": {
+          "package_name": "com.example.aplikasi_donasi_makanan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4kqKJy1AcmwX-EBMLWo5iTAfUgSRhLNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

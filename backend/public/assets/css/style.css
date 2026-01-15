@@ -1,0 +1,207 @@
+/* Admin Panel Styles */
+
+:root {
+  --primary-color: #2ecc71;
+  --secondary-color: #3498db;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(135deg, var(--dark-color) 0%, #34495e 100%);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .brand {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link {
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar .nav-link:hover {
+  transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+  box-shadow: -3px 0 0 var(--primary-color) inset;
+}
+
+/* Main Content */
+.main-content {
+  background-color: #f5f7fa;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 600;
+}
+
+/* Tables */
+.table {
+  font-size: 14px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--dark-color);
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Buttons */
+.btn {
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+/* Badges */
+.badge {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(46, 204, 113, 0.25);
+}
+
+/* Modals */
+.modal-content {
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 1050;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.alert {
+  animation: slideInRight 0.3s ease;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  color: var(--primary-color);
+}
+
+/* Status Colors */
+.badge-menunggu {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge-diverifikasi {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.badge-diterima {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge-selesai {
+  background-color: #c3e6cb;
+  color: #155724;
+}
+
+.badge-dibatalkan {
+  background-color: #f8d7da;
+  color: #721c24;
+}

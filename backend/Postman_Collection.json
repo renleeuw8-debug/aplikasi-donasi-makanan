@@ -1,0 +1,573 @@
+{
+  "info": {
+    "name": "Aplikasi Donasi Makanan API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"Rhifaldy26\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login Petugas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"petugas@gmail.com\",\n  \"password\": \"petugas123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Register Donatur",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Ahmad Donatur\",\n  \"email\": \"ahmad.donatur@example.com\",\n  \"password\": \"password123\",\n  \"password_confirm\": \"password123\",\n  \"no_hp\": \"081234567890\",\n  \"alamat\": \"Jl. Merdeka No. 123, Jakarta\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/profile",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Ahmad Donatur Updated\",\n  \"no_hp\": \"081234567890\",\n  \"alamat\": \"Jl. Merdeka No. 123, Jakarta Pusat\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/profile",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "profile"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Donasi",
+      "item": [
+        {
+          "name": "Create Donasi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jenis_donasi\": \"makanan\",\n  \"nama_barang\": \"Nasi Kuning\",\n  \"jumlah\": 50,\n  \"deskripsi\": \"Nasi kuning siap saji berkualitas\",\n  \"latitude\": -6.2088,\n  \"longitude\": 106.8456,\n  \"alamat\": \"Kantor Pusat Jakarta Pusat\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/donasi",
+              "host": ["{{base_url}}"],
+              "path": ["donasi"]
+            }
+          }
+        },
+        {
+          "name": "Get All Donasi",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/donasi?status=menunggu",
+              "host": ["{{base_url}}"],
+              "path": ["donasi"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "menunggu"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Donasi Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/donasi/1",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Donasi",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_barang\": \"Nasi Kuning Premium\",\n  \"jumlah\": 75,\n  \"deskripsi\": \"Nasi kuning premium siap saji berkualitas tinggi\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/donasi/1",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1"]
+            }
+          }
+        },
+        {
+          "name": "Verify Donasi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"penerima_id\": null\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/donasi/1/verify",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1", "verify"]
+            }
+          }
+        },
+        {
+          "name": "Receive Donasi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/donasi/1/receive",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1", "receive"]
+            }
+          }
+        },
+        {
+          "name": "Complete Donasi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/donasi/1/complete",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1", "complete"]
+            }
+          }
+        },
+        {
+          "name": "Cancel Donasi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keterangan\": \"Donasi dibatalkan karena barang rusak\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/donasi/1/cancel",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1", "cancel"]
+            }
+          }
+        },
+        {
+          "name": "Delete Donasi",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/donasi/1",
+              "host": ["{{base_url}}"],
+              "path": ["donasi", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lokasi",
+      "item": [
+        {
+          "name": "Get Map Data",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/lokasi/map/data",
+              "host": ["{{base_url}}"],
+              "path": ["lokasi", "map", "data"]
+            }
+          }
+        },
+        {
+          "name": "Get Lokasi",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/lokasi/1",
+              "host": ["{{base_url}}"],
+              "path": ["lokasi", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Lokasi",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"latitude\": -6.2088,\n  \"longitude\": 106.8456,\n  \"alamat\": \"Jl. Merdeka No. 123, Jakarta Pusat\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/lokasi/1",
+              "host": ["{{base_url}}"],
+              "path": ["lokasi", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kebutuhan",
+      "item": [
+        {
+          "name": "Create Kebutuhan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jenis_kebutuhan\": \"makanan\",\n  \"deskripsi\": \"Butuh makanan bergizi untuk keluarga\",\n  \"jumlah\": 100\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/kebutuhan",
+              "host": ["{{base_url}}"],
+              "path": ["kebutuhan"]
+            }
+          }
+        },
+        {
+          "name": "Get All Kebutuhan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/kebutuhan",
+              "host": ["{{base_url}}"],
+              "path": ["kebutuhan"]
+            }
+          }
+        },
+        {
+          "name": "Get Kebutuhan Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/kebutuhan/1",
+              "host": ["{{base_url}}"],
+              "path": ["kebutuhan", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Kebutuhan",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deskripsi\": \"Butuh makanan bergizi tinggi untuk keluarga 5 orang\",\n  \"jumlah\": 150,\n  \"status\": \"aktif\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/kebutuhan/1",
+              "host": ["{{base_url}}"],
+              "path": ["kebutuhan", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Kebutuhan",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/kebutuhan/1",
+              "host": ["{{base_url}}"],
+              "path": ["kebutuhan", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notifikasi",
+      "item": [
+        {
+          "name": "Get Notifikasi",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/notifikasi?limit=20",
+              "host": ["{{base_url}}"],
+              "path": ["notifikasi"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Unread Count",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/notifikasi/unread/count",
+              "host": ["{{base_url}}"],
+              "path": ["notifikasi", "unread", "count"]
+            }
+          }
+        },
+        {
+          "name": "Mark as Read",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/notifikasi/1/read",
+              "host": ["{{base_url}}"],
+              "path": ["notifikasi", "1", "read"]
+            }
+          }
+        },
+        {
+          "name": "Delete Notifikasi",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/notifikasi/1",
+              "host": ["{{base_url}}"],
+              "path": ["notifikasi", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
