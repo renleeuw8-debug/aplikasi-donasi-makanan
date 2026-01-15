@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'petugas_dashboard_page.dart';
 import 'verifikasi_tab_page.dart';
 import 'profil_petugas_page.dart';
+import 'daftar_penerima_page.dart';
+import 'laporan_penanganan_page.dart';
 
 class PetugasHomeShell extends StatefulWidget {
   final String? namaPetugas;
@@ -24,6 +26,8 @@ class _PetugasHomeShellState extends State<PetugasHomeShell> {
     _pages = [
       PetugasDashboardPage(namaPetugas: widget.namaPetugas),
       const VerifikasiTabPage(),
+      const DaftarPenerimaPage(),
+      const LaporanPenangananPage(),
       ProfilPetugasPage(),
     ];
     _destinations = const [
@@ -34,6 +38,14 @@ class _PetugasHomeShellState extends State<PetugasHomeShell> {
       NavigationDestination(
         icon: Icon(Icons.verified_outlined),
         label: 'Verifikasi',
+      ),
+      NavigationDestination(
+        icon: Icon(Icons.people_outline),
+        label: 'Penerima',
+      ),
+      NavigationDestination(
+        icon: Icon(Icons.description_outlined),
+        label: 'Laporan',
       ),
       NavigationDestination(icon: Icon(Icons.person_outline), label: 'Profil'),
     ];
